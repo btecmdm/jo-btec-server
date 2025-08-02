@@ -55,5 +55,45 @@ PORT=3000
 NODE_ENV=production
 ```
 
+## استخدام الخدمة
+عنوان الخدمة الأساسي: `https://jo-btec-server-1.onrender.com`
+
+### نقاط النهاية API Endpoints
+#### المحادثة
+- **URL**: `/api/ai/chat`
+- **Method**: `POST`
+- **Headers**: 
+  ```
+  Content-Type: application/json
+  ```
+- **Body**:
+  ```json
+  {
+    "message": "نص الرسالة هنا"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "response": "رد المساعد الذكي",
+    "status": "success"
+  }
+  ```
+
+### أمثلة على الاستخدام
+#### باستخدام cURL:
+```bash
+curl -X POST https://jo-btec-server-1.onrender.com/api/ai/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "السلام عليكم"}'
+```
+
+#### باستخدام PowerShell:
+```powershell
+$headers = @{ 'Content-Type' = 'application/json' }
+$body = '{"message": "السلام عليكم"}'
+Invoke-WebRequest -Uri 'https://jo-btec-server-1.onrender.com/api/ai/chat' -Method Post -Headers $headers -Body $body
+```
+
 ## الترخيص
 جميع الحقوق محفوظة © 2025 JO BTEC
